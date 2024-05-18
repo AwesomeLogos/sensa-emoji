@@ -2,6 +2,8 @@
 
 [![# of icons](https://img.shields.io/badge/dynamic/json.svg?label=icons&url=https%3A%2F%2Fsensa-emoji.svg.zone%2Fstatus.json&query=$.count)](https://sensa-emoji.svg.zone/)
 [![last update](https://img.shields.io/badge/dynamic/json.svg?label=last%20update&url=https%3A%2F%2Fsensa-emoji.svg.zone%2Fstatus.json&query=%24.lastmod)](https://sensa-emoji.svg.zone/)
+[![NodePing status](https://img.shields.io/nodeping/status/evr8hwye-vgwe-4qg5-8ryf-sc9g0cj1cmff?label=Current%20status)](https://nodeping.com/reports/statusevents/check/201109281250J5K3P-JH4Y55O0)
+[![NodePing uptime](https://img.shields.io/nodeping/uptime/evr8hwye-vgwe-4qg5-8ryf-sc9g0cj1cmff?label=30-day%20uptime)](https://nodeping.com/reports/uptime/evr8hwye-vgwe-4qg5-8ryf-sc9g0cj1cmff)
 [![pages-build-deployment](https://github.com/AwesomeLogos/sensa-emoji/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AwesomeLogos/sensa-emoji/actions/workflows/pages/pages-build-deployment)
 [![update](https://github.com/AwesomeLogos/sensa-emoji/actions/workflows/update.yaml/badge.svg)](https://github.com/AwesomeLogos/sensa-emoji/actions/workflows/update.yaml)
 
