@@ -13,7 +13,10 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Install dependencies
-      run: sudo apt-get install -y curl rename
+      run: |
+        mkdir -p tmp
+        curl --no-progress-meter http://plasmasturm.org/code/rename/rename >tmp/rename
+        chmod +x tmp/rename
 
     - name: Update
       run: |

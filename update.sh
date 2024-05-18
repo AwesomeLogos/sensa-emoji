@@ -7,17 +7,29 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-if ! [ -x "$(command -v rename)" ]; then
-	echo "ERROR: rename is not installed."
-    echo "  install with:"
-    echo "       ubuntu: sudo apt-get install rename"
-    echo "       macosx: brew install rename"
-	exit 1
-fi
+SCRIPT_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+
 
 echo "INFO: starting at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-SCRIPT_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [ "${OSTYPE}" == "darwin" ]; then
+    if ! [ -x "$(command -v rename)" ]; then
+        echo "ERROR: rename is not installed."
+        echo "  install with:"
+        echo "       brew install rename"
+        exit 1
+    fi
+else
+    # use manually download rename from http://plasmasturm.org/code/rename/rename
+    export PATH="${SCRIPT_HOME}/tmp:${PATH}"
+    if ! [ -x "$(command -v rename)" ]; then
+        echo "ERROR: rename is not installed."
+        echo "  download from http://plasmasturm.org/code/rename/rename"
+        exit 1
+    fi
+fi
+
 TMPFILE="${SCRIPT_HOME}/tmp/sensa-emoji.zip"
 
 if [ ! -f "${TMPFILE}" ]; then
@@ -25,6 +37,7 @@ if [ ! -f "${TMPFILE}" ]; then
     mkdir -p "${SCRIPT_HOME}/tmp"
     curl \
         --location \
+        --no-progress-meter \
         --output "${TMPFILE}" \
         "https://github.com/sensadesign/sensaemoji/raw/main/Sensa%20Emoji%20v1.zip"
 else
