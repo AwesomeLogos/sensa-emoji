@@ -14,7 +14,7 @@ redirect_from:
 theme: null
 links:
   - name: Sensa website
-    url: "https://sensa.co/"
+    url: "https://sensa.co/emoji"
   - name: Download originals
     url: "https://github.com/sensadesign/sensaemoji"
   - name: Report an issue
